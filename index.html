@@ -19,7 +19,7 @@
 
         /* HEADER */
         header { background: white; padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0 6px 16px rgba(0,40,20,0.08); }
-        .logo img { height: 70px; width: auto; max-width: 240px; object-fit: contain; } /* logo dibesarkan */
+        .logo img { height: 70px; width: auto; max-width: 240px; object-fit: contain; }
         .burger-menu { display: none; font-size: 2.4rem; cursor: pointer; color: #0b4f3b; }
         .nav-desktop { display: flex; gap: 25px; flex-wrap: wrap; }
         .nav-desktop a { text-decoration: none; font-weight: 700; color: #1e3a5f; transition: 0.2s; font-size: 1.1rem; border-bottom: 2px solid transparent; padding-bottom: 4px; }
@@ -34,12 +34,11 @@
         .hero { background: linear-gradient(135deg, #b8e1fc, #fde9b3); padding: 40px 5% 50px; text-align: center; border-radius: 0 0 50px 50px; }
         .hero h1 { font-size: clamp(2.2rem, 9vw, 4.5rem); color: #023b3b; text-shadow: 4px 4px 0 #f9d56b; line-height: 1.1; margin-bottom: 12px; }
         .hero p { font-size: clamp(1.3rem, 5vw, 2rem); font-weight: 600; color: #035c5c; }
-        /* Gambar landscape: lebar penuh dengan tinggi proporsional */
         .hero-img {
             width: 100%;
-            max-width: 500px;  /* lebih lebar dari sebelumnya */
+            max-width: 500px;
             height: auto;
-            aspect-ratio: 16/9; /* landscape 16:9 */
+            aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 30px;
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 8px 10px -6px rgba(0,0,0,0.1);
@@ -50,14 +49,12 @@
         }
         @keyframes float { 0%{transform:translateY(0px)} 50%{transform:translateY(-12px)} 100%{transform:translateY(0)} }
 
-        /* tombol WA */
         .btn-chat { background: #25D366; color: white; padding: 12px 30px; border-radius: 50px; font-weight: 700; font-size: 1.3rem; display: inline-block; text-decoration: none; border: 2px solid white; box-shadow: 0 10px 20px #25d36660; transition: 0.2s; margin: 15px 0 10px; }
         .btn-chat:hover { transform: scale(1.05); background: #20be5c; }
         .floating-wa { position: fixed; bottom: 70px; right: 20px; z-index: 997; display: flex; flex-direction: column; align-items: center; }
         .wa-button { width: 65px; height: 65px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem; text-decoration: none; box-shadow: 0 10px 20px #00000030; border: 3px solid white; transition: 0.2s; }
         .wa-button:hover { transform: scale(1.15) rotate(5deg); background: #20be5c; }
 
-        /* cards */
         .section { padding: 50px 5%; text-align: center; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 30px; }
         .card { background: white; padding: 30px 16px; border-radius: 40px 40px 20px 20px; box-shadow: 0 12px 0 #bed6e4; transition: 0.25s; border: 2px solid white; }
@@ -65,18 +62,62 @@
         .card i { font-size: 3rem; color: #0b4f3b; margin-bottom: 12px; }
         .card h3 { font-size: 1.8rem; margin-bottom: 8px; }
 
-        /* metode grid */
-        .metode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 15px; margin: 40px 0; }
-        .metode-item { background: #e3f2fd; padding: 18px 6px; border-radius: 40px; font-weight: 700; border: 2px dashed #0288d1; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: clamp(1rem,2.8vw,1.2rem); }
+        /* metode grid (diganti menjadi style gabungan) */
+        .metode-wrapper {
+            background: #e9f5e8;
+            border-radius: 48px;
+            padding: 30px 35px;
+            margin: 40px 0 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 2px solid #c8e6d9;
+            text-align: center;
+        }
+        .metode-teks {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #1e5631;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: baseline;
+            gap: 8px 20px;
+            line-height: 1.5;
+        }
+        .metode-teks span {
+            background: #fef9e6;
+            padding: 6px 18px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0b4f3b;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .metode-teks span i {
+            font-size: 1.2rem;
+            color: #d44c6e;
+        }
+        .metode-teks .separator {
+            background: transparent;
+            box-shadow: none;
+            font-size: 1.5rem;
+            padding: 0 2px;
+            color: #d4af37;
+        }
+        @media (max-width: 550px) {
+            .metode-teks { gap: 12px; }
+            .metode-teks span { font-size: 1rem; padding: 4px 14px; }
+        }
         .motto-badge { background: #fef3c7; border-radius: 60px; padding: 16px 20px; font-size: 1.8rem; font-weight: bold; color: #a13e2f; display: inline-block; margin: 20px auto; border: 4px solid #ffbb33; }
 
-        /* keunggulan */
         .keunggulan-bg { background: #c2e6f0; border-radius: 60px 60px 0 0; padding: 40px 5%; }
         .grid-keunggulan { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 25px; margin: 30px 0; }
         .keunggulan-item { background: #ffffffd9; backdrop-filter: blur(4px); border-radius: 40px; padding: 25px 18px; border-left: 8px solid #0b4f3b; text-align: left; box-shadow: 0 6px 0 #90a4ae; }
         .keunggulan-item i { font-size: 2.5rem; color: #d44c6e; }
 
-        /* GALERI */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -118,20 +159,16 @@
             margin-right: 6px;
         }
 
-        /* testimoni */
         .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; }
         .testi-card { background: white; border-radius: 30px 30px 30px 0; padding: 20px; box-shadow: 0 6px 0 #b0bec5; border: 2px solid white; }
         .testi-card img { width: 60px; height: 60px; border-radius: 50%; border: 4px solid #ffe082; }
 
-        /* kontak */
         .contact-wrap { display: flex; flex-wrap: wrap; gap: 25px; background: white; border-radius: 50px; padding: 30px; }
         .info p { margin: 14px 0; display: flex; align-items: center; gap: 10px; font-weight: 500; }
         .map iframe { width: 100%; height: 240px; border-radius: 40px; }
 
         footer { background: #1a3238; color: white; padding: 20px; text-align: center; }
         .small-note { font-size: 0.9rem; opacity: 0.9; }
-
-        /* harga tidak ditampilkan */
         .no-price .harga, .harga-tag { display: none; }
     </style>
 </head>
@@ -173,13 +210,11 @@
 <!-- HERO dengan GAMBAR LANDSCAPE (16:9) -->
 <section class="hero">
     <h1>Tempat Khitan / Sunat Tanpa Jarum Suntik</h1>
-    <p>Metode Moderen, Terbaru, Nyaman & Terlengkap</p>
-    <!-- Gambar landscape 16:9 -->
+    <p>Metode Modern, Terbaru, Nyaman & Terlengkap</p>
     <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgyuK-BcomnYkZSmwpAqH0TqJdD0wWvnHHLZnWKnn0OMOUQ2OLRV5bPFZU9tq4MJ1kK9s3vuoJbFCITmdWJ5YfT1YE2RNVVAxNxd-pL89abVCwoocPSICAirn-9c1VMect5DngvG04jZ280IZV0rgA3M-3ADcauhtmD9cyqDPUAC-RJ8AVOJM2pb39Hi6Vf" 
          alt="Sunat ceria Magelang" 
          class="hero-img" 
-         width="500" height="281"  <!-- rasio 16:9 -->
-         
+         width="500" height="281">
     <div>
         <a href="https://wa.me/6285228122296?text=Halo%20Ns.%20Joko,%20saya%20mau%20daftar%20khitan%20anak%20di%20Seneng%20Khitan" class="btn-chat"><i class="fab fa-whatsapp"></i> Chat Ns. Joko Purwanto,S.kep.</a>
     </div>
@@ -192,33 +227,43 @@
     <div class="grid-4">
         <div class="card"><i class="fas fa-truck"></i><h3>Khitan Panggilan</h3><p>Tim medis datang ke rumah anda</p></div>
         <div class="card"><i class="fas fa-baby"></i><h3>Khitan Bayi</h3><p>Penanganan lembut oleh tim operator yang berpengalaman</p></div>
-        <div class="card"><i class="fas fa-child"></i><h3>Khitan Anak</h3><p>
-          Membangun kepercayaan anak terhadap operator sehingga anak lebih siap ceria dan berani menerima tindakan / khitan.</p></div>
+        <div class="card"><i class="fas fa-child"></i><h3>Khitan Anak</h3><p>Membangun kepercayaan anak terhadap operator sehingga anak lebih siap ceria dan berani menerima tindakan / khitan.</p></div>
         <div class="card"><i class="fas fa-user-tie"></i><h3>Khitan Dewasa</h3><p>Privasi yang sangat terjaga</p></div>
         <div class="card"><i class="fas fa-tools"></i><h3>Perbaikan Khitan</h3><p>Revisi hasil sunat yang tidak bagus dari khitan terdahulu</p></div>
         <div class="card"><i class="fas fa-users"></i><h3>Khitan Massal</h3><p>Untuk masjid, sekolah atau yayasan dan lain-lain</p></div>
     </div>
 </section>
 
-<!-- METODE TERLENGKAP -->
+<!-- METODE TERLENGKAP - GABUNG SEMUA POIN MENJADI SATU KESATUAN TEKS -->
 <section id="metode" class="section" style="background: #fff7e6; border-radius: 70px 70px 0 0;">
     <h2>Pelayanan Khitan Modern Terbaru</h2>
     <div class="subhead"></div>
     
-    <div class="metode-grid">
-        <div class="metode-item"><i class="fas fa-circle"></i> Circle Sealer / Lem</div>
-        <div class="metode-item"><i class="fas fa-ring"></i> Super Ring / Cincin</div>
-        <div class="metode-item"><i class="fas fa-clipboard"></i> Klamp / Alisklamp</div>
-        <div class="metode-item"><i class="fas fa-bolt"></i> Couter / Laser</div>
-        <div class="metode-item"><i class="fas fa-cut"></i> Di Jahit</div>
-        <div class="metode-item"><i class="fas fa-clock"></i> Konvensional</div>
+    <!-- Metode digabung dalam satu wadah dengan tampilan yang menyatu -->
+    <div class="metode-wrapper">
+        <div class="metode-teks">
+            <span><i class="fas fa-circle"></i> Circle Sealer / Lem</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-ring"></i> Super Ring / Cincin</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-clipboard"></i> Klamp / Alisklamp</span>
+            <span class="separator">•</span>
+            <span><i class="fas fa-bolt"></i> Couter / Laser / Di Jahit</span>
+            <span class="separator">•</span>
+            
+            <span class="separator">•</span>
+            <span><i class="fas fa-clock"></i> Konvensional</span>
+        </div>
+        <p style="margin-top: 22px; font-size: 1.1rem; font-weight: 500; color: #1f5e3a; background: #fef7c0; display: inline-block; padding: 6px 22px; border-radius: 40px;">
+            <i class="fas fa-hand-peace"></i> Semua metode tersedia, konsultasikan pilihan terbaik untuk putra Anda
+        </p>
     </div>
     
     <div class="motto-badge">
         <i class="fas fa-star"></i> CERIA GAK PAKE DRAMA & LANGSUNG JADI <i class="fas fa-star"></i>
     </div>
     
-    <p style="margin-top: 25px; font-size: 1.2rem;"><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Alat modern, steril, dan sesuai standar medis</p>
+    <p style="margin-top: 10px; font-size: 1.2rem;"><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Alat modern, steril, dan sesuai standar medis</p>
 </section>
 
 <!-- GALERI FOTO -->
@@ -253,7 +298,7 @@
         </div>
     </div>
     <p style="margin-top: 30px; font-weight: 600; background: #fbc02d40; padding: 12px 20px; border-radius: 60px; display: inline-block;">
-        <i class="fas fa-heart" style="color:#d44c6e;"></i> 
+        <i class="fas fa-heart" style="color:#d44c6e;"></i> Banyak promo & diskon kejutan setiap bulannya
     </p>
 </section>
 
@@ -266,7 +311,7 @@
         <div class="keunggulan-item"><i class="fas fa-syringe"></i><h3>Alat Modern & Steril</h3><p>Alat medis modern,bersih dan terjaga keseterilannya</p></div>
         <div class="keunggulan-item"><i class="fas fa-smile"></i><h3>Nyaman & Ramah Anak</h3><p>Pelayan yang ramah,pendekatan terhadap anak disesuaikan dengan psikologi anak(terbangun trust antara anak dan operator khitan)</p></div>
         <div class="keunggulan-item"><i class="fas fa-calendar-alt"></i><h3>Layanan Lengkap</h3><p>Metode Lem, Metode super ring, Metode klamp, Metode laser/couter/di    jahit rapi, Metode konvensional.</p></div>
-        <div class="keunggulan-item"><i class="fas fa-hand-holding-heart"></i><h3>Gratis Kontrol & Konsul</h3><p>Gratis konsultasi dan kontrol sampai sembuh.</p></div>
+        <div class="keunggulan-item"><i class="fas fa-hand-holding-heart"></i><h3>Gratis Kontrol & Konsultasi</h3><p>Gratis konsultasi dan kontrol sampai sembuh.</p></div>
         <div class="keunggulan-item"><i class="fas fa-map-pin"></i><h3>Lokasi Mudah Dijangkau</h3><p>Lokasi yang mudah dijangkau,dilembah kaki gunung Tidar yg sejuk/selatan AKMIL Magelang dan Biaya yang sangat terjangkau/banyak discount kejutan</p></div>
     </div>
 </section>
@@ -302,8 +347,8 @@
     <div class="subhead"></div>
     <div class="contact-wrap">
         <div class="info">
-            <p><i class="fab fa-whatsapp" style="color:#25D366; font-size:1.5rem;"></i> <strong>0852-2812-2296</strong> (Ns. Joko)</p>
-            <p><i class="fas fa-phone-alt"></i> 0857-0196-6047 </p>
+            <p><i class="fab fa-whatsapp" style="color:#25D366; font-size:1.5rem;"></i> <strong>0852-2812-2296</strong> (Ns. Joko Purwanto, S.Kep.)</p>
+            <p><i class="fas fa-phone-alt"></i>0852-2812-2296</p>
             <p><i class="fas fa-envelope"></i> seneng.khitan.mgl@gmail.com</p>
             <p><i class="fas fa-map-pin"></i> Dsn. Seneng 1, Banyurojo, Mertoyudan, Magelang 56172</p>
             <p><i class="fas fa-clock"></i> Setiap hari (24 jam layanan darurat / konsultasi)</p>
